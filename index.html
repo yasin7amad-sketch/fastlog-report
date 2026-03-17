@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fast Log Logistics | Operating Report</title>
+  <title>Fast Log Logistics | الميزانية التشغيلية الشهرية</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
@@ -106,7 +106,7 @@
     .hero p{
       position:relative;
       z-index:1;
-      max-width:850px;
+      max-width:900px;
       margin:0 auto;
       font-size:15px;
       color:#dbe4f3;
@@ -168,7 +168,7 @@
     }
 
     .kpi .value{
-      font-size:clamp(22px,4vw,30px);
+      font-size:clamp(21px,4vw,30px);
       font-weight:900;
       line-height:1.35;
     }
@@ -176,6 +176,7 @@
     .green{ color:var(--green); }
     .red{ color:var(--red); }
     .orange{ color:var(--orange); }
+    .blue{ color:var(--blue); }
 
     .section{
       background:rgba(255,255,255,.95);
@@ -253,6 +254,11 @@
       font-size:16px;
     }
 
+    .report-table tbody tr.summary-strong td{
+      background:#f8fbff;
+      font-weight:900;
+    }
+
     .analysis{
       display:grid;
       grid-template-columns:1.1fr .9fr;
@@ -307,7 +313,7 @@
     }
 
     .result-box{
-      background:linear-gradient(135deg,#7f1d1d 0%,#991b1b 55%,#b91c1c 100%);
+      background:linear-gradient(135deg,#14532d 0%,#166534 55%,#15803d 100%);
       color:#fff;
       border-radius:22px;
       padding:22px 14px;
@@ -319,19 +325,19 @@
     .result-box h3{
       font-size:18px;
       margin-bottom:8px;
-      color:#fee2e2;
+      color:#dcfce7;
     }
 
-    .result-box .loss{
+    .result-box .profit{
       font-size:clamp(28px,5vw,42px);
       font-weight:900;
-      color:#fecaca;
+      color:#bbf7d0;
       line-height:1.3;
       margin-bottom:8px;
     }
 
     .result-box p{
-      color:#fee2e2;
+      color:#dcfce7;
       font-size:14px;
       max-width:500px;
       margin:0 auto;
@@ -467,16 +473,19 @@
         font-weight:800;
       }
 
-      .report-table tbody tr.total-row td{
+      .report-table tbody tr.total-row td,
+      .report-table tbody tr.summary-strong td{
         background:#edf4ff;
         font-size:14px;
       }
 
-      .report-table tbody tr.total-row td::before{
+      .report-table tbody tr.total-row td::before,
+      .report-table tbody tr.summary-strong td::before{
         color:#0f172a;
       }
 
-      .report-table tbody tr.total-row td .cell-value{
+      .report-table tbody tr.total-row td .cell-value,
+      .report-table tbody tr.summary-strong td .cell-value{
         color:#0f172a;
       }
 
@@ -484,7 +493,7 @@
         font-size:18px;
       }
 
-      .result-box .loss{
+      .result-box .profit{
         font-size:28px;
       }
     }
@@ -498,43 +507,274 @@
       <div class="badge">بسم الله الرحمن الرحيم</div>
       <h1>Fast Log Logistics</h1>
       <p>
-        ميزانية تشغيل عن شهر واحد، تعرض الإيرادات والمصروفات وصافي النتيجة المالية
-        بصورة واضحة ومباشرة، مع تنسيق محسّن للجوال بحيث تظهر الجداول بشكل مرتب وسهل القراءة.
+        الميزانية التشغيلية الشهرية المحدثة وفق الأرقام المعتمدة، وتشمل الرواتب والمصروفات التشغيلية
+        والإيرادات المتوقعة وصافي الربح، مع ترتيب واضح ودقيق لجميع البيانات.
       </p>
 
       <div class="hero-meta">
-        <span>فترة التقرير: شهر تشغيل</span>
-        <span>نوع التقرير: ميزانية تشغيل</span>
-        <span>الحالة الحالية: خسارة تشغيلية</span>
+        <span>عدد الشحنات في اليوم: 500</span>
+        <span>سعر الشحنة: 12</span>
+        <span>عدد أيام العمل: 26</span>
       </div>
     </section>
 
     <section class="kpi-grid">
       <div class="kpi">
-        <h3>إجمالي الإيرادات</h3>
-        <div class="value">156,000 ريال</div>
+        <h3>الإيراد الشهري (شامل ضريبة القيمة المضافة)</h3>
+        <div class="value blue">156,000</div>
       </div>
 
       <div class="kpi">
-        <h3>إجمالي المصروفات</h3>
-        <div class="value red">157,208 ريال</div>
+        <h3>إجمالي التكلفة</h3>
+        <div class="value red">135,360</div>
       </div>
 
       <div class="kpi">
-        <h3>صافي النتيجة</h3>
-        <div class="value red">خسارة 1,208 ريال</div>
+        <h3>إجمالي الإيرادات (قبل ضريبة القيمة المضافة)</h3>
+        <div class="value orange">179,400</div>
       </div>
 
       <div class="kpi">
-        <h3>حالة التشغيل</h3>
-        <div class="value orange">عجز تشغيلي</div>
+        <h3>صافي الربح</h3>
+        <div class="value green">44,040</div>
       </div>
     </section>
 
     <section class="section">
-      <h2 class="section-title">الإيرادات</h2>
+      <h2 class="section-title">الميزانية التشغيلية الشهرية - الرواتب</h2>
       <p class="section-sub">
-        يوضح هذا الجزء آلية تكوين الإيراد الشهري بناءً على حجم الشحنات اليومية وتسعير الشحنة وعدد أيام التشغيل الفعلية.
+        تم إدراج جميع الوظائف وأعداد الموظفين والراتب الأساسي وإجمالي الراتب الشهري كما وردت في الجدول المعتمد.
+      </p>
+
+      <div class="table-wrap">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>الوظيفة</th>
+              <th>الراتب الأساسي</th>
+              <th>العدد</th>
+              <th>إجمالي الراتب</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">مدير تنفيذي</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">13,300</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">13,300</span></td>
+            </tr>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">مدير عمليات</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">10,000</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">10,000</span></td>
+            </tr>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">مدير تشغيل</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">8,500</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">8,500</span></td>
+            </tr>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">محاسب</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">5,000</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">5,000</span></td>
+            </tr>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">منسق عمليات</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">4,000</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">4,000</span></td>
+            </tr>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">مشرف</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">3,000</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">3,000</span></td>
+            </tr>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">مندوب استلام</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">2,800</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">2,800</span></td>
+            </tr>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">مندوب توصيل</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">2,500</span></td>
+              <td data-label="العدد"><span class="cell-value">4</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">10,000</span></td>
+            </tr>
+            <tr>
+              <td data-label="الوظيفة"><span class="cell-value">عمال</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">1,800</span></td>
+              <td data-label="العدد"><span class="cell-value">2</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">3,600</span></td>
+            </tr>
+            <tr class="total-row">
+              <td data-label="الوظيفة"><span class="cell-value">إجمالي الرواتب</span></td>
+              <td data-label="الراتب الأساسي"><span class="cell-value">—</span></td>
+              <td data-label="العدد"><span class="cell-value">13</span></td>
+              <td data-label="إجمالي الراتب"><span class="cell-value">60,200</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">المصروفات التشغيلية الشهرية</h2>
+      <p class="section-sub">
+        جميع بنود المصروفات التشغيلية محدثة كما وردت، وتشمل التكلفة للوحدة والعدد والإجمالي قبل 15% والإجمالي بعد 15%.
+      </p>
+
+      <div class="table-wrap">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>البند</th>
+              <th>التكلفة للوحدة</th>
+              <th>العدد</th>
+              <th>الإجمالي قبل 15%</th>
+              <th>الإجمالي بعد 15%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="البند"><span class="cell-value">إيجار سيارات آت هياس روف</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">6,300</span></td>
+              <td data-label="العدد"><span class="cell-value">2</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">12,600</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">14,490</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">إيجار سيارات هايس سقف منخفض</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">5,500</span></td>
+              <td data-label="العدد"><span class="cell-value">2</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">11,000</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">12,650</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">إيجار سيارات سيدان</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">2,100</span></td>
+              <td data-label="العدد"><span class="cell-value">2</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">4,200</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">4,830</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">إيجار سيارة إدارية</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">1,750</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">1,750</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">1,750</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">الكهرباء</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">1,500</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">1,500</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">1,725</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">الصيانة</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">1,000</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">1,000</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">1,150</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">الإنترنت</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">400</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">400</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">460</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">الواتساب</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">800</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">800</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">920</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">خدمة العملاء</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">2,000</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">2,000</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">2,300</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">مصروفات مكتبية</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">500</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">500</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">575</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">رسوم نظام</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">5,000</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">5,000</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">5,750</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">الوقود (8 سيارات × 60 ريال × 26 يوم)</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">60</span></td>
+              <td data-label="العدد"><span class="cell-value">240</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">14,400</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">16,560</span></td>
+            </tr>
+            <tr>
+              <td data-label="البند"><span class="cell-value">إيجار مستودع + مكتبي</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">12,000</span></td>
+              <td data-label="العدد"><span class="cell-value">1</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">12,000</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">12,000</span></td>
+            </tr>
+            <tr class="total-row">
+              <td data-label="البند"><span class="cell-value">إجمالي المصروفات (بعد 15%)</span></td>
+              <td data-label="التكلفة للوحدة"><span class="cell-value">—</span></td>
+              <td data-label="العدد"><span class="cell-value">—</span></td>
+              <td data-label="الإجمالي قبل 15%"><span class="cell-value">—</span></td>
+              <td data-label="الإجمالي بعد 15%"><span class="cell-value">75,160</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">الإيرادات الشهرية المتوقعة</h2>
+      <p class="section-sub">
+        تم إدراج الإيراد الشهري والملخص النهائي كما ورد في الجدول المعتمد، مع المحافظة على نفس ترتيب الأرقام والقيم.
+      </p>
+
+      <div class="table-wrap">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>عدد الشحنات في اليوم</th>
+              <th>سعر الشحنة</th>
+              <th>عدد أيام العمل</th>
+              <th>الإيراد الشهري (شامل ضريبة القيمة المضافة)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="عدد الشحنات في اليوم"><span class="cell-value">500</span></td>
+              <td data-label="سعر الشحنة"><span class="cell-value">12</span></td>
+              <td data-label="عدد أيام العمل"><span class="cell-value">26</span></td>
+              <td data-label="الإيراد الشهري (شامل ضريبة القيمة المضافة)"><span class="cell-value">156,000</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">الملخص المالي النهائي</h2>
+      <p class="section-sub">
+        هذا الملخص يعرض نفس القيم النهائية الواردة في الجدول النهائي بدون أي تعديل.
       </p>
 
       <div class="table-wrap">
@@ -546,155 +786,40 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td data-label="البند"><span class="cell-value">عدد الشحنات اليومية</span></td>
-              <td data-label="القيمة"><span class="cell-value">500 شحنة</span></td>
+            <tr class="summary-strong">
+              <td data-label="البند"><span class="cell-value">إجمالي الرواتب</span></td>
+              <td data-label="القيمة"><span class="cell-value">60,200</span></td>
             </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">سعر الشحنة</span></td>
-              <td data-label="القيمة"><span class="cell-value">12 ريال</span></td>
+            <tr class="summary-strong">
+              <td data-label="البند"><span class="cell-value">إجمالي المصروفات الأخرى</span></td>
+              <td data-label="القيمة"><span class="cell-value">75,160</span></td>
             </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">عدد أيام التشغيل</span></td>
-              <td data-label="القيمة"><span class="cell-value">26 يوم</span></td>
+            <tr class="summary-strong">
+              <td data-label="البند"><span class="cell-value">إجمالي التكلفة</span></td>
+              <td data-label="القيمة"><span class="cell-value">135,360</span></td>
             </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">المعادلة</span></td>
-              <td data-label="القيمة"><span class="cell-value">12 × 500 × 26 = 156,000 ريال</span></td>
+            <tr class="summary-strong">
+              <td data-label="البند"><span class="cell-value">إجمالي الإيرادات (قبل ضريبة القيمة المضافة)</span></td>
+              <td data-label="القيمة"><span class="cell-value">179,400</span></td>
             </tr>
             <tr class="total-row">
-              <td data-label="البند"><span class="cell-value">إجمالي الإيرادات</span></td>
-              <td data-label="القيمة"><span class="cell-value">156,000 ريال</span></td>
+              <td data-label="البند"><span class="cell-value">صافي الربح</span></td>
+              <td data-label="القيمة"><span class="cell-value">44,040</span></td>
             </tr>
           </tbody>
         </table>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">المصروفات التشغيلية</h2>
-      <p class="section-sub">
-        يعرض الجدول التالي كافة بنود المصروفات التشغيلية بشكل مرتب وواضح، مع إبراز إجمالي المصروفات الشهرية.
-      </p>
-
-      <div class="table-wrap">
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>البند</th>
-              <th>القيمة (ريال)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-label="البند"><span class="cell-value">إيجار سيارات</span></td>
-              <td data-label="القيمة"><span class="cell-value">58,628</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">وقود 8 سيارات</span></td>
-              <td data-label="القيمة"><span class="cell-value">480</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">رواتب مناديب</span></td>
-              <td data-label="القيمة"><span class="cell-value">17,800</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">رواتب موظفين لاست مايل</span></td>
-              <td data-label="القيمة"><span class="cell-value">17,100</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">رواتب إدارية</span></td>
-              <td data-label="القيمة"><span class="cell-value">40,000</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">إيجار مستودع</span></td>
-              <td data-label="القيمة"><span class="cell-value">12,000</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">كهرباء مستودع</span></td>
-              <td data-label="القيمة"><span class="cell-value">1,500</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">إنترنت</span></td>
-              <td data-label="القيمة"><span class="cell-value">400</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">نظام لوجستي للتشغيل</span></td>
-              <td data-label="القيمة"><span class="cell-value">5,000</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">مصروفات ضيافة</span></td>
-              <td data-label="القيمة"><span class="cell-value">1,000</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">خدمة عملاء</span></td>
-              <td data-label="القيمة"><span class="cell-value">2,000</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">واتساب</span></td>
-              <td data-label="القيمة"><span class="cell-value">800</span></td>
-            </tr>
-            <tr>
-              <td data-label="البند"><span class="cell-value">مصاريف مكتبية</span></td>
-              <td data-label="القيمة"><span class="cell-value">500</span></td>
-            </tr>
-            <tr class="total-row">
-              <td data-label="البند"><span class="cell-value">إجمالي المصروفات</span></td>
-              <td data-label="القيمة"><span class="cell-value">157,208 ريال</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">تحليل ميزانية التشغيل</h2>
-      <p class="section-sub">
-        ملخص مباشر للحالة المالية الحالية بناءً على مقارنة الإيرادات بالمصروفات خلال شهر التشغيل.
-      </p>
-
-      <div class="analysis">
-        <div class="analysis-box">
-          <p><strong>الخسائر الحالية: 1,208 ريال</strong></p>
-          <p>
-            بلغ إجمالي الإيرادات <strong>156,000 ريال</strong>، بينما بلغ إجمالي المصروفات
-            <strong>157,208 ريال</strong>، مما أدى إلى تسجيل خسارة تشغيلية خلال الفترة.
-          </p>
-          <p>
-            القراءة الحالية تشير إلى أن النشاط التشغيلي قائم، لكن التكاليف ما زالت أعلى من الإيرادات،
-            وهو ما يتطلب تحسينًا في كفاءة التشغيل أو خفضًا في بعض بنود المصروفات الرئيسية.
-          </p>
-        </div>
-
-        <div class="insight-box">
-          <div class="insight-grid">
-            <div class="insight-item">
-              <span>الخسارة الحالية</span>
-              <b class="red">1,208 ريال</b>
-            </div>
-            <div class="insight-item">
-              <span>نتيجة الشهر</span>
-              <b class="orange">عجز تشغيلي</b>
-            </div>
-            <div class="insight-item">
-              <span>الحاجة الحالية</span>
-              <b>معالجة التكاليف</b>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="result-box">
-        <h3>صافي النتيجة المالية</h3>
-        <div class="loss">خسارة 1,208 ريال</div>
+        <h3>صافي الربح</h3>
+        <div class="profit">44,040</div>
         <p>
-          المصروفات التشغيلية تجاوزت الإيرادات خلال هذا الشهر، مما نتج عنه خسارة تشغيلية تتطلب مراجعة فورية لبنود التكلفة.
+          تم تحديث هذه القيمة كما وردت في الجدول النهائي المرسل، ووضعها في مكانها النهائي داخل الملخص التنفيذي.
         </p>
       </div>
 
       <div class="footer-sign">
-        والله الموفق<br>
-        عبداللطيف الخليفة
+        والله الموفق
       </div>
     </section>
 
